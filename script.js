@@ -21,6 +21,20 @@ function statusChangeCallback(response) {
   }
 }
 
+
+var checkForGroup = function(groupid, callback){
+  FB.api('/me/groups', function(response) {
+    for (var i=0; i<response.length; i++) {
+      if (response[i].id == groupid) {
+        callback(true);
+        return;
+      }
+    }
+    callback(false);
+  });
+};
+
+
 // This function is called when someone finishes with the Login
 // Button.  See the onlogin handler attached to it in the sample
 // code below.
