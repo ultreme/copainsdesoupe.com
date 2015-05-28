@@ -8,9 +8,12 @@
   </head>
   <body>
     <script type="text/javascript" src="./script.js"></script>
-    <hr />
-    <fb:login-button scope="public_profile,user_groups" onlogin="checkLoginState();"></fb:login-button>
-    <hr />
-    <div id="status"></div>
+    <div id="pas-copains">
+      <fb:login-button id="login-button" scope="public_profile,user_groups" onlogin="checkLoginState();"></fb:login-button>
+      <div id="status"></div>
+    </div>
+    <div id="copains-land" style="display: none;">
+      COUCOU COPAIN
+    </div>
   </body>
 </html>

@@ -90,7 +90,12 @@ function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
   FB.api('/me', function(response) {
     checkForGroup(function(isCopain) {
-      document.write("ONLY FOR COPAINS");
+      if (isCopain) {
+        document.getElementById("copains-land").style.display = 'block';
+        document.getElementById("pas-copains").style.display = 'none';
+      } else {
+        document.write("ONLY FOR COPAINS");
+      }
     });
   });
 }
