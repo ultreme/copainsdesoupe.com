@@ -22,10 +22,13 @@ function statusChangeCallback(response) {
 }
 
 
-var checkForGroup = function(groupid, callback){
+var copainDeSoupeId = 420963924723525;
+
+
+var checkForGroup = function(callback){
   FB.api('/me/groups', function(response) {
-    for (var i=0; i<response.length; i++) {
-      if (response[i].id == groupid) {
+    for (var i = 0; i < response.length; i++) {
+      if (response[i].id == copainDeSoupeId) {
         callback(true);
         return;
       }
