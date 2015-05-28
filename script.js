@@ -47,13 +47,13 @@ function checkLoginState() {
   });
 }
 
+
 window.fbAsyncInit = function() {
   FB.init({
-    appId      : '{your-app-id}',
-    cookie     : true,  // enable cookies to allow the server to access
-    // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.2' // use version 2.2
+    appId      : '494986927334634',
+    cookie     : true,
+    xfbml      : true,
+    version    : 'v2.3'
   });
 
   // Now that we've initialized the JavaScript SDK, we call
@@ -71,8 +71,8 @@ window.fbAsyncInit = function() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
   });
-
 };
+
 
 // Load the SDK asynchronously
 (function(d, s, id) {
@@ -82,6 +82,7 @@ window.fbAsyncInit = function() {
   js.src = "//connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
 
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
