@@ -22,13 +22,13 @@ function statusChangeCallback(response) {
 }
 
 
-var copainDeSoupeId = 420963924723525;
+var copainDeSoupeId = '420963924723525';
 
 
 var checkForGroup = function(callback){
   FB.api('/me/groups', function(response) {
-    for (var i = 0; i < response.length; i++) {
-      if (response[i].id == copainDeSoupeId) {
+    for (var i = 0; i < response.data.length; i++) {
+      if (response.data[i].id == copainDeSoupeId) {
         callback(true);
         return;
       }
@@ -89,8 +89,8 @@ window.fbAsyncInit = function() {
 function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
   FB.api('/me', function(response) {
-    console.log('Successful login for: ' + response.name);
-    document.getElementById('status').innerHTML =
-      'Thanks for logging in, ' + response.name + '!';
+    checkForGroup(function(isCopain) {
+      document.write("ONLY FOR COPAINS");
+    });
   });
 }
